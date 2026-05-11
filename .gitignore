@@ -39,3 +39,4 @@ assets/reporter.mp4
 .idea/
 .vscode/
 *.swp
+.vercel
