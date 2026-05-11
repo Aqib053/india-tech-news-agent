@@ -1,4 +1,4 @@
-# Python pipeline is run off-Vercel; only `site/` is deployed as static HTML.
+# Python worker is not uploaded to Vercel (static landing only).
 src/
 main.py
 run_bot.py

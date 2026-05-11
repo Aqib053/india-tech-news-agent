@@ -97,15 +97,13 @@ In Telegram: `/start` → **Generate New Video**. Only **one** bot process per t
 
 ## Deploy on Vercel
 
-This repository is primarily a **Python worker**. Vercel hosts a **small static overview** in the `site/` folder (landing copy, architecture summary).
+This repository is primarily a **Python worker**. Vercel only builds a **static landing page**: `npm run build` copies `site/index.html` → `dist/index.html` (see `package.json` + `vercel.json`).
 
-1. Push the repo to GitHub and import it in [Vercel](https://vercel.com).  
-2. **Framework preset:** Other (or “No framework”).  
-3. **Build Command:** leave empty (or `echo "static"`).  
-4. **Output Directory:** `site` (also set in `vercel.json`).  
-5. **Install Command:** leave empty.
+1. Import the GitHub repo in [Vercel](https://vercel.com).  
+2. **Framework preset:** Vercel will detect **npm** from `package.json` (that is intentional).  
+3. Defaults should match `vercel.json` (`npm install --omit=dev`, `npm run build`, output **`dist`**).
 
-The **pipeline itself** (Ollama, FFmpeg, long encodes, Telegram long-polling) should run on a **VPS, home server, or CI runner** — not inside Vercel serverless timeouts.
+The **pipeline** (Ollama, FFmpeg, long encodes, Telegram long-polling) must run on a **Mac, Linux VPS, or CI runner** — not inside Vercel serverless timeouts.
 
 ---
 
