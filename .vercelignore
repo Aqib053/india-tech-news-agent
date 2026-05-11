@@ -2,7 +2,7 @@
 src/
 main.py
 run_bot.py
-requirements.txt
+requirements.pipeline.txt
 .env.example
 README.md
 LICENSE

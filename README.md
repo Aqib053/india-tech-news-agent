@@ -19,6 +19,8 @@ An automated pipeline that collects **India-relevant** stories from Google News,
 
 ## Requirements
 
+Python dependencies are listed in **`requirements.pipeline.txt`** (that name avoids Vercel treating this repo as a Python serverless app when you connect Git).
+
 - **Python** 3.11+ (3.12+ recommended)
 - **FFmpeg** on `PATH`
 - **Ollama** with a pulled model (default `llama3.1:8b`)
@@ -29,11 +31,11 @@ An automated pipeline that collects **India-relevant** stories from Google News,
 ## Quick start
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Aqib053/india-tech-news-agent.git
 cd "AI Agent"
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements.pipeline.txt
 cp .env.example .env
 ```
 
