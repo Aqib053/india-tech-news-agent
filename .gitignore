@@ -1,0 +1,41 @@
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pipeline outputs (regenerated locally)
+output/*
+!output/.gitkeep
+
+# OAuth / API credentials (keep paths; never commit tokens)
+credentials/*.json
+!credentials/.gitkeep
+
+# Optional local reporter asset (often licensed / personal)
+assets/reporter.png
+assets/reporter.jpg
+assets/reporter.mp4
+
+# Media scratch during renders
+**/scratch/
+
+# Editors
+.idea/
+.vscode/
+*.swp
