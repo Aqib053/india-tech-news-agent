@@ -13,7 +13,7 @@ An automated pipeline that collects **India-relevant** stories from Google News,
 | **Voice** | Primary: **Microsoft Edge TTS** (`VOICE_NAME`, e.g. `en-IN-NeerjaNeural`). Automatic fallbacks across other India neural voices; then **macOS `say`** with `MACOS_SAY_VOICE` (e.g. `Veena`). |
 | **Video** | Bright studio gradient, reporter **image** (Ken Burns motion) or **looping clip**, audio waveform, **timed captions** aligned to real audio duration, **720p H.264** for Telegram’s ~50 MB bot limit. |
 | **Dedup** | `MEMORY_FILE` tracks used stories so repeats are avoided across runs. |
-| **Triggers** | `main.py` for batch runs; `run_bot.py` for Telegram inline **Generate New Video**. |
+| **Triggers** | `run_news_video.py` for batch runs; `run_bot.py` for Telegram inline **Generate New Video**. |
 
 ---
 
@@ -52,7 +52,7 @@ ollama pull llama3.1:8b
 5. Run once:
 
 ```bash
-python main.py
+python run_news_video.py
 ```
 
 Artifacts appear under `output/` (`voiceover-*.mp3`, `subtitles-*.srt`, `tech-news-*.mp4`, `reports/run-*.json`).
@@ -92,7 +92,7 @@ In Telegram: `/start` → **Generate New Video**. Only **one** bot process per t
 ## Scheduling (cron example)
 
 ```cron
-30 6 * * * cd /path/to/AI\ Agent && . .venv/bin/activate && python main.py >> output/cron.log 2>&1
+30 6 * * * cd /path/to/AI\ Agent && . .venv/bin/activate && python run_news_video.py >> output/cron.log 2>&1
 ```
 
 ---
