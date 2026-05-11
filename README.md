@@ -49,9 +49,11 @@ ollama serve
 ollama pull llama3.1:8b
 ```
 
-5. Run once:
+5. Run once (either form):
 
 ```bash
+python main.py
+# or
 python run_news_video.py
 ```
 
@@ -104,7 +106,7 @@ The **`web/`** folder is a **static-only** microsite (HTML + minimal `package.js
 **Live site:** [https://india-tech-news-agent-web.vercel.app](https://india-tech-news-agent-web.vercel.app)
 
 1. Import [the GitHub repository](https://github.com/Aqib053/india-tech-news-agent) in [Vercel](https://vercel.com) **or** use the CLI from `web/` (see below).  
-2. Open **Project → Settings → General → Root Directory** and set it to **`web`**.  
+2. Open **Project → Settings → General → Root Directory** and set it to **`web`** (required so root `main.py` is not treated as a Python serverless app).  
 3. **Build Command:** leave empty. **Output Directory:** leave default (`.`).  
 4. **Install Command:** leave default (`npm install` is fine; there are no dependencies).
 
