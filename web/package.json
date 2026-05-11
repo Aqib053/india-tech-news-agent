@@ -1,0 +1,5 @@
+{
+  "name": "india-tech-news-agent-web",
+  "private": true,
+  "description": "Static landing only. Set Vercel Root Directory to web/."
+}

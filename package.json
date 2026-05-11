@@ -1,8 +1,0 @@
-{
-  "name": "india-tech-news-agent",
-  "private": true,
-  "description": "Vercel builds only the static landing page from site/; Python worker is not built here.",
-  "scripts": {
-    "build": "node -e \"require('fs').mkdirSync('dist',{recursive:true}); require('fs').copyFileSync('site/index.html','dist/index.html');\""
-  }
-}
