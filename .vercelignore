@@ -1,0 +1,12 @@
+# Python pipeline is run off-Vercel; only `site/` is deployed as static HTML.
+src/
+main.py
+run_bot.py
+requirements.txt
+.env.example
+README.md
+LICENSE
+.gitignore
+credentials/
+output/
+assets/
