@@ -101,12 +101,14 @@ In Telegram: `/start` → **Generate New Video**. Only **one** bot process per t
 
 The **`web/`** folder is a **static-only** microsite (HTML + minimal `package.json`) so Vercel never scans the Python worker at the repo root.
 
-1. Import [the GitHub repository](https://github.com/Aqib053/india-tech-news-agent) in [Vercel](https://vercel.com).  
+**Live site:** [https://india-tech-news-agent-web.vercel.app](https://india-tech-news-agent-web.vercel.app)
+
+1. Import [the GitHub repository](https://github.com/Aqib053/india-tech-news-agent) in [Vercel](https://vercel.com) **or** use the CLI from `web/` (see below).  
 2. Open **Project → Settings → General → Root Directory** and set it to **`web`**.  
-3. **Build Command:** leave empty. **Output Directory:** leave default (`.` / “same as root”) or `.`  
+3. **Build Command:** leave empty. **Output Directory:** leave default (`.`).  
 4. **Install Command:** leave default (`npm install` is fine; there are no dependencies).
 
-CLI alternative from your machine:
+CLI from your machine:
 
 ```bash
 cd web && vercel deploy --prod
