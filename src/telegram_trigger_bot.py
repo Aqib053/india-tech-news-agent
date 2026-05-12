@@ -26,7 +26,17 @@ class TelegramTriggerBot:
         with httpx.Client(timeout=70) as client:
             self._delete_webhook(client)
             while True:
-                updates = self._get_updates(client)
+                try:
+                    updates = self._get_updates(client)
+                except (
+                    httpx.ReadError,
+                    httpx.ConnectError,
+                    httpx.TimeoutException,
+                    httpx.RemoteProtocolError,
+                ) as exc:
+                    print(f"Telegram connection dropped ({type(exc).__name__}: {exc!s}). Reconnecting in 5s…")
+                    time.sleep(5)
+                    continue
                 for update in updates:
                     self._offset = max(self._offset, update["update_id"] + 1)
                     self._handle_update(client, update)
